@@ -151,7 +151,7 @@
             this.dayModeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dayModeToolStripMenuItem.Image")));
             this.dayModeToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black;
             this.dayModeToolStripMenuItem.Name = "dayModeToolStripMenuItem";
-            this.dayModeToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.dayModeToolStripMenuItem.Size = new System.Drawing.Size(161, 24);
             this.dayModeToolStripMenuItem.Text = "Day Mode";
             this.dayModeToolStripMenuItem.Click += new System.EventHandler(this.dayModeToolStripMenuItem_Click);
             // 
@@ -160,7 +160,7 @@
             this.nigthModeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.nigthModeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nigthModeToolStripMenuItem.Image")));
             this.nigthModeToolStripMenuItem.Name = "nigthModeToolStripMenuItem";
-            this.nigthModeToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.nigthModeToolStripMenuItem.Size = new System.Drawing.Size(161, 24);
             this.nigthModeToolStripMenuItem.Text = "Nigth Mode";
             this.nigthModeToolStripMenuItem.Click += new System.EventHandler(this.nigthModeToolStripMenuItem_Click);
             // 
