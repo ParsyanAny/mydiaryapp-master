@@ -74,10 +74,10 @@
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.openToolStripMenuItem.Size = new System.Drawing.Size(170, 24);
             this.openToolStripMenuItem.Text = "Open";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.MenuOpen_Click);
             // 
             // saveToolStripMenuItem
             // 
+            this.saveToolStripMenuItem.Enabled = false;
             this.saveToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
             this.saveToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -91,10 +91,11 @@
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.saveAsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveAsToolStripMenuItem.Image")));
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
             this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(170, 24);
             this.saveAsToolStripMenuItem.Text = "Save as";
-            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.MenuSaveas_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -132,7 +133,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(421, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menu";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // viewToolStripMenuItem
             // 
@@ -171,7 +171,7 @@
             this.exitToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
             this.exitToolStripMenuItem1.Size = new System.Drawing.Size(54, 29);
             this.exitToolStripMenuItem1.Text = "Exit";
-            this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
+            this.exitToolStripMenuItem1.Click += new System.EventHandler(this.MenuExit_Click);
             // 
             // noteBook
             // 
@@ -215,7 +215,7 @@
             this.simbolCount.BackColor = System.Drawing.Color.Transparent;
             this.simbolCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.simbolCount.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.simbolCount.Location = new System.Drawing.Point(264, 428);
+            this.simbolCount.Location = new System.Drawing.Point(178, 428);
             this.simbolCount.Name = "simbolCount";
             this.simbolCount.Size = new System.Drawing.Size(107, 17);
             this.simbolCount.TabIndex = 6;

@@ -13,20 +13,17 @@ namespace SaveChangesInTextFile
 {
     public partial class MyNoteBook : Form
     {
+        OpenFileDialog op = new OpenFileDialog();
         public MyNoteBook()
         {
             InitializeComponent();
         }
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
+        #region Menu
         private void MenuOpen_Click(object sender, EventArgs e)
         {
             OpenFileDialog op = new OpenFileDialog();
             op.Filter = "TXT files|*.txt";
             op.InitialDirectory = @"\";//@"C:\";
-
             if (op.ShowDialog() == DialogResult.OK)
             {
                 noteBook.Text = File.ReadAllText(op.FileName.ToString());
@@ -34,18 +31,17 @@ namespace SaveChangesInTextFile
         }
         private void MenuSave_Click(object sender, EventArgs e)
         {
-            SaveFileDialog save = new SaveFileDialog();
-            //save.RestoreDirectory = true;
-            //save.DefaultExt = ".txt";
-            //var res = save.ShowDialog();
-            //if (res == DialogResult.OK)
-            //{
-            //    File.WriteAllText(save.FileName, noteBook.Text);
-            //}
-            
+            if (op.FileName != "")
+            {
+                File.WriteAllText(op.FileName, noteBook.Text);
+                this.Text = "NotBook: Saved";
+            }
+            else
+            {
+                MenuSaveas_Click(null, null);
+            }
         }
-
-        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MenuSaveas_Click(object sender, EventArgs e)
         {
             SaveFileDialog save = new SaveFileDialog();
             save.RestoreDirectory = true;
@@ -56,31 +52,21 @@ namespace SaveChangesInTextFile
                 File.WriteAllText(save.FileName, noteBook.Text);
             }
         }
-        private void dayModeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MenuExit_Click(object sender, EventArgs e)
         {
-            BackColor = Color.Linen;
-            noteBook.BackColor = Color.Linen;
-            noteBook.ForeColor = Color.Black;
-        }
-        private void nigthModeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            BackColor = Color.Black;
-            noteBook.BackColor = Color.Black;
-            noteBook.ForeColor = Color.White;
-        }
-
-        private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
             DialogResult res = MessageBox.Show("Are You Sure?","EXIT",MessageBoxButtons.YesNo);
             if(res==DialogResult.Yes)
-            Close();
+            this.Close();
         }
+        #endregion
         private void noteBook_TextChanged(object sender, EventArgs e)
         {
+            this.Text = "NoteBook";
+            saveToolStripMenuItem.Enabled = true;
             lineCount.Text = $"Line Count:{noteBook.Lines.Length}";
             simbolCount.Text = $"Simbol Count:{noteBook.TextLength}";
         }
+        #region CountersDesign
         private void r1_CheckedChanged(object sender, EventArgs e)
         {
             simbolCount.Visible = false;
@@ -95,22 +81,6 @@ namespace SaveChangesInTextFile
             r1.Visible = true;
             r2.Visible = false;
         }
-        private void radioNight1_CheckedChanged(object sender, EventArgs e)
-        {
-            BackColor = Color.Black;
-            noteBook.BackColor = Color.Black;
-            noteBook.ForeColor = Color.White;
-            radioNight1.Visible = false;
-            radioNight2.Visible = true;
-        }
-
-        private void radioNight2_CheckedChanged(object sender, EventArgs e)
-        {
-            BackColor = Color.Linen;
-            noteBook.BackColor = Color.Linen;
-            noteBook.ForeColor = Color.Black;
-            radioNight1.Visible = true;
-            radioNight2.Visible = false;
-        }
+        #endregion
     }
 }
