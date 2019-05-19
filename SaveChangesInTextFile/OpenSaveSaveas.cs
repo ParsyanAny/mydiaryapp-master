@@ -62,7 +62,7 @@ namespace SaveChangesInTextFile
         }
         private void InfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("JUST TRY IT!","INFO");
         }
         private void MenuExit_Click(object sender, EventArgs e)
         {
@@ -70,9 +70,10 @@ namespace SaveChangesInTextFile
             if (res == DialogResult.Yes)
             {
                 SaveToolStripMenuItem_Click_1(null, null);
+                MessageBox.Show("I did my job. You can go", "Exit", MessageBoxButtons.OK);
                 this.Close();
             }
-            else { this.Close(); }
+            else  Close();
         }
         #endregion
         #region RichTextBox Event
