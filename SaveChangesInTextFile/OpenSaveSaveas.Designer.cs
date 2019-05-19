@@ -72,8 +72,9 @@
             this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(170, 24);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
@@ -84,16 +85,16 @@
             this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.White;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(170, 24);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.MenuSave_Click);
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click_1);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.saveAsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveAsToolStripMenuItem.Image")));
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(170, 24);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.saveAsToolStripMenuItem.Text = "Save as";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.MenuSaveas_Click);
             // 
@@ -188,7 +189,7 @@
             this.noteBook.Size = new System.Drawing.Size(421, 389);
             this.noteBook.TabIndex = 1;
             this.noteBook.Text = "";
-            this.noteBook.TextChanged += new System.EventHandler(this.noteBook_TextChanged);
+            this.noteBook.TextChanged += new System.EventHandler(this.NoteBook_TextChanges);
             // 
             // contextMenuStrip1
             // 

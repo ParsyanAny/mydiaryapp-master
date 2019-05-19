@@ -14,14 +14,16 @@ namespace SaveChangesInTextFile
     public partial class MyNoteBook : Form
     {
         OpenFileDialog op = new OpenFileDialog();
+        SaveFileDialog save = new SaveFileDialog();
+
         public MyNoteBook()
         {
             InitializeComponent();
         }
         #region Menu
-        private void MenuOpen_Click(object sender, EventArgs e)
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog op = new OpenFileDialog();
+           // OpenFileDialog op = new OpenFileDialog();
             op.Filter = "TXT files|*.txt";
             op.InitialDirectory = @"\";//@"C:\";
             if (op.ShowDialog() == DialogResult.OK)
@@ -29,12 +31,18 @@ namespace SaveChangesInTextFile
                 noteBook.Text = File.ReadAllText(op.FileName.ToString());
             }
         }
-        private void MenuSave_Click(object sender, EventArgs e)
+        private void saveToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             if (op.FileName != "")
             {
                 File.WriteAllText(op.FileName, noteBook.Text);
                 this.Text = "NotBook: Saved";
+            }
+            else if (save.FileName != "")
+            {
+                File.WriteAllText(save.FileName, noteBook.Text);
+                this.Text = "NotBook: Saved";
+
             }
             else
             {
@@ -43,13 +51,13 @@ namespace SaveChangesInTextFile
         }
         private void MenuSaveas_Click(object sender, EventArgs e)
         {
-            SaveFileDialog save = new SaveFileDialog();
             save.RestoreDirectory = true;
             save.DefaultExt = ".txt";
             var res = save.ShowDialog();
             if (res == DialogResult.OK)
             {
                 File.WriteAllText(save.FileName, noteBook.Text);
+                this.Text = "NotBook: Saved";
             }
         }
         private void MenuExit_Click(object sender, EventArgs e)
@@ -59,13 +67,15 @@ namespace SaveChangesInTextFile
             this.Close();
         }
         #endregion
-        private void noteBook_TextChanged(object sender, EventArgs e)
+        #region RichTextBox Event
+        private void NoteBook_TextChanges(object sender, EventArgs e)
         {
             this.Text = "NoteBook";
             saveToolStripMenuItem.Enabled = true;
             lineCount.Text = $"Line Count:{noteBook.Lines.Length}";
             simbolCount.Text = $"Simbol Count:{noteBook.TextLength}";
         }
+        #endregion
         #region CountersDesign
         private void r1_CheckedChanged(object sender, EventArgs e)
         {
@@ -82,5 +92,6 @@ namespace SaveChangesInTextFile
             r2.Visible = false;
         }
         #endregion
+
     }
 }

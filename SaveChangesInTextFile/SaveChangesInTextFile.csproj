@@ -53,7 +53,7 @@
     <Compile Include="OpenSaveSaveas.Designer.cs">
       <DependentUpon>OpenSaveSaveas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Events\DayModeEvents.cs">
+    <Compile Include="DayModeEvents.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
@@ -83,5 +83,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
