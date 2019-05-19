@@ -21,7 +21,7 @@ namespace SaveChangesInTextFile
             InitializeComponent();
         }
         #region Menu
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
            // OpenFileDialog op = new OpenFileDialog();
             op.Filter = "TXT files|*.txt";
@@ -31,7 +31,7 @@ namespace SaveChangesInTextFile
                 noteBook.Text = File.ReadAllText(op.FileName.ToString());
             }
         }
-        private void saveToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void SaveToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             if (op.FileName != "")
             {
@@ -60,12 +60,16 @@ namespace SaveChangesInTextFile
                 this.Text = "NotBook: Saved";
             }
         }
+        private void InfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
         private void MenuExit_Click(object sender, EventArgs e)
         {
             DialogResult res = MessageBox.Show("Do you want to save changes?","EXIT",MessageBoxButtons.YesNo);
             if (res == DialogResult.Yes)
             {
-                saveToolStripMenuItem_Click_1(null, null);
+                SaveToolStripMenuItem_Click_1(null, null);
                 this.Close();
             }
             else { this.Close(); }
@@ -76,6 +80,7 @@ namespace SaveChangesInTextFile
         {
             this.Text = "NoteBook";
             saveToolStripMenuItem.Enabled = true;
+            saveAsToolStripMenuItem.Enabled = true;
             lineCount.Text = $"Line Count:{noteBook.Lines.Length}";
             simbolCount.Text = $"Simbol Count:{noteBook.TextLength}";
         }
@@ -97,5 +102,6 @@ namespace SaveChangesInTextFile
         }
         #endregion
 
+       
     }
 }
