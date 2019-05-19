@@ -215,7 +215,7 @@
             this.simbolCount.BackColor = System.Drawing.Color.Transparent;
             this.simbolCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.simbolCount.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.simbolCount.Location = new System.Drawing.Point(163, 428);
+            this.simbolCount.Location = new System.Drawing.Point(264, 428);
             this.simbolCount.Name = "simbolCount";
             this.simbolCount.Size = new System.Drawing.Size(107, 17);
             this.simbolCount.TabIndex = 6;
