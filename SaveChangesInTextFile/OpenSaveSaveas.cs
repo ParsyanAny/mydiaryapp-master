@@ -62,9 +62,13 @@ namespace SaveChangesInTextFile
         }
         private void MenuExit_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("Are You Sure?","EXIT",MessageBoxButtons.YesNo);
-            if(res==DialogResult.Yes)
-            this.Close();
+            DialogResult res = MessageBox.Show("Do you want to save changes?","EXIT",MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                saveToolStripMenuItem_Click_1(null, null);
+                this.Close();
+            }
+            else { this.Close(); }
         }
         #endregion
         #region RichTextBox Event
